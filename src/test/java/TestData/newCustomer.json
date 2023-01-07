@@ -1,0 +1,11 @@
+{
+  "name" : "Ali Veli",
+  "address": "15 Yemen Road",
+  "city": "Yemen",
+  "state": "Yemen",
+  "PIN" : "123456",
+  "phone": "4169897312",
+  "pass" : "123456",
+  "gender" : "male",
+  "birthdate": "1990-05-05"
+}
