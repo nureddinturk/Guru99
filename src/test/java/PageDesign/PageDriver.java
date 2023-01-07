@@ -20,4 +20,11 @@ public class PageDriver {
             }
        return driver;
         }
+
+    public void shutDown() throws IOException {
+        driver.close();
+            driver.quit();
+    }
+
+
     }

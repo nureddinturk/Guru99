@@ -34,4 +34,9 @@ public class LoginSteps {
         loginPage.verifyLogin();
     }
 
+    @Then("landing page is not populated")
+    public void landing_page_is_not_populated() {
+        loginPage.verifyLoginFailed();
+    }
+
 }

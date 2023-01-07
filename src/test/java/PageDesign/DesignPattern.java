@@ -6,14 +6,12 @@ import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
 
-public class DesignPattern {
+public class DesignPattern extends PageDriver{
 
     WebDriver driver;
-    PageDriver pageDriver = new PageDriver();
-
 
     public DesignPattern() throws IOException {
-        this.driver = pageDriver.getDriver();
+        this.driver = getDriver();
     }
     public LoginPage loginPage;
 

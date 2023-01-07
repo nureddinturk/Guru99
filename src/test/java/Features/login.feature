@@ -12,3 +12,13 @@ Feature: User can login successfully with email
       | mngr469674 | AhYdUmA  |
 
 
+  @SmokeTest
+  Scenario Outline: Negative Test for Login
+    Given user is on landing page
+    And login page is successfully uploaded
+    When user enters <username> and <password>
+    Then landing page is not populated
+
+    Examples:
+      | username   | password |
+      | wronguser | wrongpass  |

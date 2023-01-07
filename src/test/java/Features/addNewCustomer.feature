@@ -5,6 +5,7 @@ Feature: user can add a new customer
     And login page is successfully uploaded
 
 
+    @RegressionTest
   Scenario Outline: navigate to the customer entry page
     Given user enters <username> and <password>
     When user clicks on new customer button

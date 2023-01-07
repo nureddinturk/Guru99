@@ -1,9 +1,11 @@
 package PageObjects;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -59,13 +61,17 @@ loginButton.click();
 
 
     public void verifyLogin() {
-if (loginText.getText().contains("Manger Id")) {
-    System.out.println("Login was success");
-}
-
-
-}
-
-
+        Assert.assertTrue(loginText.getText().contains("Manger Id"));
+            driver.close();
+            driver.quit();
+        }
+        public void verifyLoginFailed() {
+            Alert alert = driver.switchTo().alert();
+            Assert.assertTrue(alert.getText().contains("not valid"));
+            System.out.println(alert.getText());
+            alert.dismiss();
+            driver.close();
+            driver.quit();
+            }
 
 }

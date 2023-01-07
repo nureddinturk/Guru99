@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -69,9 +70,8 @@ public class CustomerPage {
     }
 
     public void verifyCustomerPage() {
-        if (driver.getTitle().contains("New Customer")) {
-            System.out.println("New customer page navigation was success");
-        }
+        Assert.assertTrue(driver.getTitle().contains("New Customer"));
+        driver.quit();
     }
 
     public void enterCustomerInfo() throws FileNotFoundException {
@@ -98,14 +98,8 @@ public class CustomerPage {
     }
 
     public void verifyNewCustomer() throws InterruptedException {
-        if(heading.getText().contains("Successfully")) {
-            System.out.println(heading.getText());
-        }
-
-
-
-
-
+        Assert.assertTrue(heading.getText().contains("Successfully"));
+        driver.quit();
     }
 }
 
